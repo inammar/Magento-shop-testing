@@ -1,6 +1,5 @@
 package tests;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -40,7 +39,7 @@ public class LoginTests {
 
     @Test
     public void testEmptyFieldsLogin1() {
-        // Test case 2: Password field empty
+        // Test case 1 (continued): Password field empty
         loginPage.login("validEmail@test.com", "");
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginPage.passwordError));
         WebElement passwordError = driver.findElement(loginPage.passwordError);
@@ -49,7 +48,7 @@ public class LoginTests {
 
     @Test
     public void testEmptyFieldsLogin2() {
-        // Test case 3: Both fields empty
+        // Test case 1 (continued): Both fields empty
         loginPage.login("", "");
         // Wait for both email and password error messages to be present
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginPage.emailError));
@@ -59,7 +58,7 @@ public class LoginTests {
 
     @Test
     public void testInvalidLogin() {
-        // Test  case 4: wrong credentials
+        // Test  case 2: invalid credentials
         loginPage.login("wronguser@gmail.com", "wrongpassword");
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginPage.invalidLoginMessage));
         Assert.assertTrue(loginPage.isInvalidLoginMessageDisplayed(), "Invalid login message is not displayed.");
@@ -69,18 +68,18 @@ public class LoginTests {
 
     @Test
     public void testValidLogin() {
-        // Test  case 5: valid credentials
-        loginPage.login("inam999@gmail.com", "Menulis123");  // valid credentials
+        // Test  case 3: valid credentials
+        loginPage.login("valid@gmail.com", "validpassw");  // valid credentials
         loginPage.waitForWelcomeMessage();
         WebElement welcomeMessageElement = driver.findElement(loginPage.welcomeMessage);
         Assert.assertTrue(welcomeMessageElement.isDisplayed(), "Welcome message is not displayed.");
     }
 
-    //@AfterClass
-    //public void tearDown() {
+    @AfterClass
+    public void tearDown() {
         // Quit the WebDriver after tests are done
-        //WebDriverUtil.quitDriver();  // Quit driver using WebDriverUtil method
-    //}
+        WebDriverUtil.quitDriver();  // Quit driver using WebDriverUtil method
+    }
 }
 
 

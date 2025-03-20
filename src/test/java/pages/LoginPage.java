@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
@@ -22,11 +21,11 @@ public class LoginPage {
     // Locators for negative scenario (wrong email and wrong password)
     public By invalidLoginMessage = By.cssSelector("div[data-bind='html: $parent.prepareMessageForHtml(message.text)']");
 
-    //Locators, when one the email or password fields remain empty
+    //Locators, when one field: the email or password, remains empty
     public By emailError = By.id("email-error");
     public By passwordError = By.id("pass-error");
 
-    // Constructor - make sure driver is passed correctly to LoginPage
+    // Constructor - makes sure driver is passed correctly to LoginPage
     public LoginPage(WebDriver driver) {
         this.driver = driver;  // Ensure driver is initialized and passed correctly
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Initialize WebDriverWait with 20 seconds
