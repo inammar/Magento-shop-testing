@@ -13,9 +13,9 @@ public class WebDriverUtil {
         WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver.manage().window().maximize();//maximize the window
 
-        // Open magento shop website
+        // Open Magento shop website
         driver.get("https://magento.softwaretestingboard.com/");
 
         return driver;
