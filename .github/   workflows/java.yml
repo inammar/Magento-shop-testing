@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repo (repo)
         uses: actions/checkout@v4
 
       - name: Say Hello
