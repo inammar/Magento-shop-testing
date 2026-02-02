@@ -1,5 +1,4 @@
 Practicing    knowledge of Selenium with TestNG using clothing web shop. 
-
 This is a demo shop for testing automation scripts.
 
 
