@@ -1,3 +1,5 @@
+[![Java Maven Build](https://github.com/inammar/Magento-shop-testing/actions/workflows/java.yml/badge.svg)](https://github.com/inammar/Magento-shop-testing/actions/workflows/java.yml)
+
 Practicing    knowledge of Selenium with TestNG using clothing web shop. 
 This is a demo shop for testing automation scripts.
 
